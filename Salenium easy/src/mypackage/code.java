@@ -147,3 +147,8 @@ wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(.
 wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email"))).sendKeys("Some Email ID");
 driver.findElement(By.id("login-password")).sendKeys("Some Password");
 driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
+
+
+
+
+changes

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class automation {
 @Test
 	public void main() {
-	System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver","D:\\gecko\\geckodriver.exe");
 	// Create a new instance of the FireFox driver
 	WebDriver driver = new FirefoxDriver();
 
