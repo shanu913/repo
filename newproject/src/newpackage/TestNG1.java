@@ -67,7 +67,7 @@ public class TestNG1 {
 
       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-      //Launch the Online Store Website
+      //Launch the Online Store Website to
 
       driver.get("https://www.google.co.in");
 
