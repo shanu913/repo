@@ -150,6 +150,7 @@ driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
 
 
 
+ Patch2
 
 WebDriverWait wait = new WebDriverWait(driver, 15);          //add Explicit Wait
 wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("Your xpath"))));
@@ -163,3 +164,8 @@ driver.findElement(By.xpath("Your xpath")).click();   //After Explicit Wait Clic
 System.out.println("Page title is: " + driver.getTitle());
 
 hi world tt
+
+shanu gsgs jbhejd bjdbj
+bdjd fffsf
+changes
+ master
