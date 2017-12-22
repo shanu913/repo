@@ -25,15 +25,4 @@ public class Register {
 		driver.findElement(By.xpath("//*[@id='lastname']")).sendKeys("User");
 		driver.findElement(By.xpath("//*[@id='email_address']")).sendKeys("t.user.com");
 	}
-	
-	
-sfsf
 }
-dd
-
-	
-adxsd
-
-hi
-
-sdfs hhh
