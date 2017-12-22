@@ -151,4 +151,15 @@ driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
 
 
 
-changes
+WebDriverWait wait = new WebDriverWait(driver, 15);          //add Explicit Wait
+wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("Your xpath"))));
+
+driver.findElement(By.xpath("Your xpath")).click();   //After Explicit Wait Click on WebElement
+
+
+
+
+// Check the title of the page
+System.out.println("Page title is: " + driver.getTitle());
+
+hi
