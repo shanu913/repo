@@ -4,10 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
+
 public class automation {
 @Test
 	public void main() {
-	System.setProperty("webdriver.gecko.driver","D:\\gecko\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver","E:\\Study\\Selenium\\New folder\\geckodriver.exe");
 	// Create a new instance of the FireFox driver
 	WebDriver driver = new FirefoxDriver();
 
