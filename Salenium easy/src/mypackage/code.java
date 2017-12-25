@@ -235,3 +235,21 @@ else{
 System.out.println("Customer Registration Unsuccessful - Failed");    
 }
 driver.close();
+
+
+
+String url = driver.getCurrentUrl();
+//System.out.println(url);
+
+if (url.contains("http://www.gcrit.com/build3/index.php")){
+System.out.println("Login Successful - Passed");
+}
+else{
+System.out.println("Login Unsuccessful - Failed");
+}
+driver.close();
+
+
+
+xpath using class and text
+//a[@class='headerLink' and text()='Logoff']
