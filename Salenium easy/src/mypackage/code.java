@@ -225,3 +225,13 @@ driver.close();
 
 
 
+
+String Message = driver.findElement(By.xpath(".//*[@id='bodyContent']/h1")).getText();
+
+if (Message.equals("Your Account Has Been Created!")){
+System.out.println("Customer Registration Successful - Passed");
+}
+else{
+System.out.println("Customer Registration Unsuccessful - Failed");    
+}
+driver.close();
