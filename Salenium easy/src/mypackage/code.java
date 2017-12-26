@@ -253,3 +253,6 @@ driver.close();
 
 xpath using class and text
 //a[@class='headerLink' and text()='Logoff']
+
+
+changes
