@@ -3,26 +3,61 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
 public class Register {
-	
-	@Test
-	public void main() throws InterruptedException
-	{
-		System.setProperty("webdriver.gecko.driver","D:\\gecko\\geckodriver.exe");
-		WebDriver driver=new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://iskdemo.com/teamwear/index.php/");
-		driver.findElement(By.xpath("//a[text()='Sign Up'and @class='login']")).click();
-		Thread.sleep(10000);
-		WebDriverWait wait = new WebDriverWait(driver, 40);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'and @title='Register']")));
-		driver.findElement(By.xpath("//button[@type='submit'and @title='Register']")).click();
-		driver.findElement(By.xpath("//*[@id='firstname']")).sendKeys("Test");
-		driver.findElement(By.xpath("//*[@id='lastname']")).sendKeys("User");
-		driver.findElement(By.xpath("//*[@id='email_address']")).sendKeys("t.user.com");
+	static WebDriver driver = new FirefoxDriver();
+	public static String username,password;
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+		driver.get("http://www.gcrit.com/build3/admin/");
+		
+		
+		Register ob=new Register();
+		
+		
+		
+		for (int i =1; i <=3; i++){
+			if (i == 1){
+				username ="admin";
+				password="admin@123";
+				ob.valid(username,password);
+			} else if (i == 2) {
+				username ="admin1";
+				password="admin@123";
+				ob.invalid(username,password);
+			} else if (i == 3) {
+				username ="admin1";
+				password="admin@123";
+			}
+		}
 	}
-}
+	public void valid(String username, String password) throws InterruptedException
+	{
+		
+		
+		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(By.id("tdb1")).click();
+		//Thread.sleep(5000);
+		driver.findElement(By.xpath("//a[@class='headerLink' and text()='Logoff']")).click();
+		System.out.println("Test case pass sucessfully" );
+		
+	}
+	public void invalid(String username, String password)
+	{
+		driver.get("http://www.gcrit.com/build3/admin/");
+		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(By.id("tdb1")).click();
+		//Thread.sleep(5000);
+		System.out.println("Test case failed" );
+	}
+		}
+
+
+
+
+
+		
+	
+	
