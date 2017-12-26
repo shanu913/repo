@@ -258,21 +258,43 @@ xpath using class and text
 //a[@class='headerLink' and text()='Logoff']
 
 
-WebDriver driver = new FirefoxDriver();
-driver.get("http://www.gcrit.com/build3/admin/");
-driver.findElement(By.name("username")).sendKeys(username);
-driver.findElement(By.name("password")).sendKeys(password);
-driver.findElement(By.id("tdb1")).click();
+public class VerifyLogin {
+	public static String Error_Message, username, password, iteration;
 
-String URL = driver.getCurrentUrl();
-if (! URL.equals("http://www.gcrit.com/build3/admin/index.php")){
-	System.out.println("Failed");  
-	
-//Error_Message = driver.findElement(By.className("messageStackError")).getText();
-}
+	public static void main(String[] args) {
+	System.setProperty("webdriver.gecko.driver","D:\\gecko\\geckodriver.exe");
+	for (int i =1; i <=2; i++){
+	if (i == 1){
+	username ="admin";
+	password="admin@123";
+	iteration ="Iteration 1";
+	}
+	else if (i == 2){
+	username ="admin1";
+	password="admin@123";
+	iteration ="Iteration 2";    
+	}
 
-if (URL.equals("http://www.gcrit.com/build3/admin/index.php")) {
-System.out.println(iteration+" - Admin Login Successful -Passed");    
-}    
-else if ((! URL.equals("http://www.gcrit.com/build3/admin/index.php"))){
-System.out.println(iteration+" -Admin Login Unsuccessful and Showing Correct Error Message-Failed");
+	WebDriver driver = new FirefoxDriver();
+	driver.get("http://www.gcrit.com/build3/admin/");
+	driver.findElement(By.name("username")).sendKeys(username);
+	driver.findElement(By.name("password")).sendKeys(password);
+	driver.findElement(By.id("tdb1")).click();
+
+	String URL = driver.getCurrentUrl();
+	if (! URL.equals("http://www.gcrit.com/build3/admin/index.php")){
+		System.out.println("Failed");  
+		
+	//Error_Message = driver.findElement(By.className("messageStackError")).getText();
+	}
+
+	if (URL.equals("http://www.gcrit.com/build3/admin/index.php")) {
+	System.out.println(iteration+" - Admin Login Successful -Passed");    
+	}    
+	else if ((! URL.equals("http://www.gcrit.com/build3/admin/index.php"))){
+	System.out.println(iteration+" -Admin Login Unsuccessful and Showing Correct Error Message-Failed");
+	}
+	driver.close();
+	}
+	}
+	}
