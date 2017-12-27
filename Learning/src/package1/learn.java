@@ -189,7 +189,7 @@ package package1;
 		-----------------------------------
 		Selenium Test Case:
 
-		public class VerifyLogin {
+		//public class VerifyLogin {
 		static int i;
 		static String username, password, iteration;
 		public static void main(String[] args) throws InterruptedException {
@@ -266,7 +266,7 @@ package package1;
 
 
 
-		xpath using class and text
+		//xpath using class and text
 		//a[@class='headerLink' and text()='Logoff']
 
 
