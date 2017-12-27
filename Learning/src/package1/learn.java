@@ -273,7 +273,7 @@ package package1;
 		// VerifyLogin 
 			public static String Error_Message, username, password, iteration;
 
-			public static void main(String[] args) {
+			//public static void main(String[] args) {
 			System.setProperty("webdriver.gecko.driver","D:\\gecko\\geckodriver.exe");
 			for (int i =1; i <=2; i++){
 			if (i == 1){
