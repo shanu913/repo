@@ -1,12 +1,12 @@
 package package1;
 
-public class learn {
+//public class learn {
 
-	package package1;
+	//package package1;
 
-	public class learn {
+	//public class learn {
 
-		package mypackage;
+		//package mypackage;
 
 		import java.util.concurrent.TimeUnit;
 
@@ -16,7 +16,7 @@ public class learn {
 		import org.openqa.selenium.support.ui.ExpectedConditions;
 		import org.openqa.selenium.support.ui.WebDriverWait;
 
-		public class code {
+		//public class code {
 
 		}
 
@@ -270,7 +270,7 @@ public class learn {
 		//a[@class='headerLink' and text()='Logoff']
 
 
-		public class VerifyLogin {
+		// VerifyLogin 
 			public static String Error_Message, username, password, iteration;
 
 			public static void main(String[] args) {
@@ -312,7 +312,7 @@ public class learn {
 			}
 
 
-		public class VerifyLogin {
+		//login verify
 			public static String Error_Message, username, password, iteration;
 
 			public static void main(String[] args) {
