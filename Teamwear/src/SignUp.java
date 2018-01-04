@@ -11,13 +11,13 @@ public class SignUp {
 	public static Boolean click;
 	public static void main(String[] args)
 	{
-	System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 	for (int i =1; i <=2; i++){
 		if (i == 1){
 			FirstName ="use";
 			LastName="us";
 			click = true;
-			EmailAddress="us@gmail.com";
+			EmailAddress="usf@gmail.com";
 		} else if (i == 2) {
 			FirstName ="aadmin7";
 			LastName="user8";
@@ -45,15 +45,15 @@ public class SignUp {
 	driver.findElement(By.xpath("//button[@type='submit'and @title='Register']")).click();
 	
 	String url=driver.getCurrentUrl();
-	if (!url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/"))
-	{
-		System.out.println("Test cases failed");
-	}
+	System.out.println(url);
 	if (url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/"))
 	{
 		System.out.println("Test cases passed");
 	}
-	else if (! url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/")) && (Error_Message.contains("There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account.")){
+	else
+	{
+		System.out.println("Test cases failed");
+	}
 	driver.close();
 		}
 	}  
