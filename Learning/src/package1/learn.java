@@ -376,4 +376,43 @@ package package1;
 		driver.findElement(By.xpath("//*[@id='lastname']")).sendKeys("User");
 		driver.findElement(By.xpath("//*[@id='email_address']")).sendKeys("t.user.com");
 	}
+	
+	
+	
+	/*try catch
+	  public void deleteSubVar() throws Exception  
+{         
+  try   
+  {    
+    if(driver.findElement(By.xpath(noRecordId)).isDisplayed() )     
+    {      
+      /**when the element is found do this*/     
+    }    
+  }      
+  catch(Exception e)     
+  {       
+   /**include the else part here*/     
+  }       
+}  
 
+
+/*Sign up backup
+ * String url=driver.getCurrentUrl();
+	if (!url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/"))
+	{
+	Error_Message = driver.findElement(By.linkText("click here")).getText();
+	}
+	if (url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/"))
+	{
+		System.out.println("Test cases passed");
+	}
+	else if (! url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/") && (Error_Message.contains("There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account."))){
+		System.out.println("Test cases vsfsfsf");
+	}
+	else
+	{
+		System.out.println("Test cases passed");
+	}
+	driver.close();
+		}
+	}  
