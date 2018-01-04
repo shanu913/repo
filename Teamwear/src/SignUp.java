@@ -11,19 +11,20 @@ public class SignUp {
 	public static Boolean click;
 	public static void main(String[] args)
 	{
-	System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
 	for (int i =1; i <=2; i++){
 		if (i == 1){
 			FirstName ="use";
 			LastName="us";
 			click = true;
-			EmailAddress="usf@gmail.com";
+			EmailAddress="aq4@gmail.com";
 		} else if (i == 2) {
-			FirstName ="aadmin7";
-			LastName="user8";
+			FirstName ="aad";
+			LastName="use";
 			click = false;
-			EmailAddress="user9.com";
+			EmailAddress="u.com";
 		}
+	
 	WebDriver driver=new FirefoxDriver();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	driver.get("http://iskdemo.com/teamwear/index.php/");
@@ -44,18 +45,15 @@ public class SignUp {
 	wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'and @title='Register']")));
 	driver.findElement(By.xpath("//button[@type='submit'and @title='Register']")).click();
 	
-	String url=driver.getCurrentUrl();
-	System.out.println(url);
-	if (url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/"))
-	{
-		System.out.println("Test cases passed");
-	}
-	else
-	{
-		System.out.println("Test cases failed");
-	}
-	driver.close();
-		}
-	}  
-	}
 
+	if (driver.findElement(By.xpath("//span[text()='Thank you for registering with TeamWear.']")).isDisplayed()==true)
+	{
+		System.out.println("Passed");
+	}
+	else if(driver.findElement(By.xpath("//a[text()='Sign Up'and @class='login']")).isDisplayed()==true)
+	{
+		System.out.println("Failed");
+	}
+	}
+	}
+}
