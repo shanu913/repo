@@ -7,17 +7,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUp {
-	public static String FirstName, LastName, EmailAddress;
+	public static String FirstName, LastName, EmailAddress, Error_Message;
 	public static Boolean click;
 	public static void main(String[] args)
 	{
-	System.setProperty("webdriver.gecko.driver","D:\\gecko\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 	for (int i =1; i <=2; i++){
 		if (i == 1){
 			FirstName ="use";
 			LastName="us";
 			click = true;
-			EmailAddress="us@gmail.com";
+			EmailAddress="usf@gmail.com";
 		} else if (i == 2) {
 			FirstName ="aadmin7";
 			LastName="user8";
@@ -44,8 +44,18 @@ public class SignUp {
 	wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'and @title='Register']")));
 	driver.findElement(By.xpath("//button[@type='submit'and @title='Register']")).click();
 	
-	
-		}
+	String url=driver.getCurrentUrl();
+	System.out.println(url);
+	if (url.equals("http://iskdemo.com/teamwear/index.php/customer/account/index/"))
+	{
+		System.out.println("Test cases passed");
 	}
+	else
+	{
+		System.out.println("Test cases failed");
+	}
+	driver.close();
+		}
+	}  
 	}
 
