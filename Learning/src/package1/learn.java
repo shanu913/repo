@@ -113,7 +113,8 @@ package package1;
 			}         
 		}
 
-
+Span
+//span[text()='Thank you for registering with TeamWear.']	
 
 
 		if(driver.findElements(by.xpath("//*[@id=253]")).size>0)
@@ -417,4 +418,32 @@ package package1;
 		}
 	}
 	
-	hhg
+	If else
+	String title=driver.getTitle();
+	System.out.println(title);
+	if (title.equals("My Dashboard"))
+	{
+		System.out.println("Test cases passed");
+	}
+	else
+	{
+		System.out.println("Test cases failed");
+	}
+	driver.close();
+		}
+	}  
+	}
+	
+	
+	If else......
+	
+	if (driver.findElement(By.xpath("//span[text()='Thank you for registering with TeamWear.']")).isDisplayed()==true)
+	{
+		System.out.println("Passed");
+	}
+	else
+	{
+		System.out.println("Failed");
+	}
+	}
+	}
