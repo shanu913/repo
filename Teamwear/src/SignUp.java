@@ -9,20 +9,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SignUp {
 	public static String FirstName, LastName, EmailAddress, Error_Message;
 	public static Boolean click;
-	public static void main(String[] args)
+	public static int iteration;
+	public static void main(String[] args) throws InterruptedException
 	{
-	System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 	for (int i =1; i <=2; i++){
 		if (i == 1){
 			FirstName ="use";
 			LastName="us";
 			click = true;
-			EmailAddress="aq4@gmail.com";
+			EmailAddress="a16@gmail.com";
+			iteration=1;
 		} else if (i == 2) {
 			FirstName ="aad";
 			LastName="use";
 			click = false;
 			EmailAddress="u.com";
+			iteration=2;
 		}
 	
 	WebDriver driver=new FirefoxDriver();
@@ -44,16 +47,19 @@ public class SignUp {
 	WebDriverWait wait1 = new WebDriverWait(driver, 40);
 	wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'and @title='Register']")));
 	driver.findElement(By.xpath("//button[@type='submit'and @title='Register']")).click();
+	Thread.sleep(5000);
 	
-
-	if (driver.findElement(By.xpath("//span[text()='Thank you for registering with TeamWear.']")).isDisplayed()==true)
-	{
-		System.out.println("Passed");
-	}
-	else if(driver.findElement(By.xpath("//a[text()='Sign Up'and @class='login']")).isDisplayed()==true)
-	{
-		System.out.println("Failed");
-	}
-	}
-	}
-}
+		String title=driver.getTitle();
+		
+		if (title.equals("My Account"))
+		{
+			System.out.println("iteration "+ iteration +" Test cases passed");
+		}
+		else
+		{
+			System.out.println("iteration "+ iteration +" Test cases failed");
+		}
+		driver.close();
+			}
+		}  
+		}
