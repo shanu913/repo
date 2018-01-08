@@ -14,7 +14,7 @@ public class SignUp {
 	
 	public void invokebroswer()
 	{
-		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://iskdemo.com/teamwear/index.php/");
