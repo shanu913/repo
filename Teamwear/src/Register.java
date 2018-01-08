@@ -3,61 +3,63 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Register {
-	static WebDriver driver = new FirefoxDriver();
-	public static String username,password;
-	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
-		driver.get("http://www.gcrit.com/build3/admin/");
+	public static String FirstName, LastName, EmailAddress, Error_Message;
+	public static Boolean click;
+	public static int iteration;
+	public static void main(String[] args) throws InterruptedException
+	{
+	System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
+	for (int i =1; i <=2; i++){
+		if (i == 1){
+			FirstName ="use";
+			LastName="us";
+			click = true;
+			EmailAddress="a161@gmail.com";
+			iteration=1;
+		} else if (i == 2) {
+			FirstName ="aad";
+			LastName="use";
+			click = false;
+			EmailAddress="u.com";
+			iteration=2;
+		}
+	
+	WebDriver driver=new FirefoxDriver();
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.get("http://iskdemo.com/teamwear/index.php/");
+	driver.findElement(By.xpath("//a[text()='Sign Up'and @class='login']")).click();
+	driver.findElement(By.xpath("//*[@id='firstname']")).sendKeys(FirstName);
+	driver.findElement(By.xpath("//*[@id='lastname']")).sendKeys(LastName);
+	driver.findElement(By.xpath("//*[@id='email_address']")).sendKeys(EmailAddress);
+	driver.findElement(By.xpath("//input[@id='billing:telephone']")).sendKeys("1234");
+	if(click) {
+	WebDriverWait wait = new WebDriverWait(driver, 40);
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'and @title='Register']")));
+	driver.findElement(By.xpath("//input[@name='I sell products online']")).click();
+	}
+	driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");
+	driver.findElement(By.xpath("//input[@id='confirmation']")).sendKeys("123456");
+	driver.findElement(By.xpath("//input[@id='store_name']")).sendKeys("ABC");
+	WebDriverWait wait1 = new WebDriverWait(driver, 40);
+	wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'and @title='Register']")));
+	driver.findElement(By.xpath("//button[@type='submit'and @title='Register']")).click();
+	Thread.sleep(5000);
+	
+		String title=driver.getTitle();
 		
-		
-		Register ob=new Register();
-		
-		
-		
-		for (int i =1; i <=3; i++){
-			if (i == 1){
-				username ="admin";
-				password="admin@123";
-				ob.valid(username,password);
-			} else if (i == 2) {
-				username ="admin1";
-				password="admin@123";
-				ob.invalid(username,password);
-			} else if (i == 3) {
-				username ="admin1";
-				password="admin@123";
+		if (title.equals("My Account"))
+		{
+			System.out.println("iteration "+ iteration +" Test cases passed");
+		}
+		else
+		{
+			System.out.println("iteration "+ iteration +" Test cases failed");
+		}
+		driver.close();
 			}
+		}  
 		}
-	}
-	public void valid(String username, String password) throws InterruptedException
-	{
-		
-		
-		driver.findElement(By.name("username")).sendKeys(username);
-		driver.findElement(By.name("password")).sendKeys(password);
-		driver.findElement(By.id("tdb1")).click();
-		//Thread.sleep(5000);
-		driver.findElement(By.xpath("//a[@class='headerLink' and text()='Logoff']")).click();
-		System.out.println("Test case pass sucessfully" );
-		
-	}
-	public void invalid(String username, String password)
-	{
-		driver.get("http://www.gcrit.com/build3/admin/");
-		driver.findElement(By.name("username")).sendKeys(username);
-		driver.findElement(By.name("password")).sendKeys(password);
-		driver.findElement(By.id("tdb1")).click();
-		//Thread.sleep(5000);
-		System.out.println("Test case failed" );
-	}
-		}
-gsdg dgdg
-
-
-
-
-		
-	
-	
