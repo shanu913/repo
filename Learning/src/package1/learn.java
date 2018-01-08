@@ -522,5 +522,18 @@ Shortcut .......
 Formating - ctrl+A then Ctrl+shift+f
 
 
+{
+		driver.get("http://iskdemo.com/teamwear/index.php/");
+		driver.findElement(By.xpath("//a[@class='login' and text()='Login']")).click();
+		driver.findElement(By.xpath("//input[@id='email']")).clear();
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("a20@gmail.com");
+		driver.findElement(By.xpath("//input[@id='pass']")).clear();
+		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("123456");
+		driver.findElement(By.xpath("//button[@id='send2']")).click();
+		System.out.println("Login sucessfully");
+		
+	}
+
+
 
 */
