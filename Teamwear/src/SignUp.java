@@ -11,25 +11,9 @@ public class SignUp {
 	public static String FirstName, LastName, EmailAddress, Error_Message;
 	public static Boolean click;
 	public static int iteration;
-	public static void main(String[] args) throws InterruptedException
-	{
-	System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
-	for (int i =1; i <=2; i++){
-		if (i == 1){
-			FirstName ="use";
-			LastName="us";
-			click = true;
-			EmailAddress="a19@gmail.com";
-			iteration=1;
-		} else if (i == 2) {
-			FirstName ="aad";
-			LastName="use";
-			click = false;
-			EmailAddress="u.com";
-			iteration=2;
 	public void invokebroswer(String url){
 		try {
-			System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 			WebDriver driver = new FirefoxDriver();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
