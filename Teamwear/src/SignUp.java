@@ -12,17 +12,16 @@ public class SignUp {
 	public static Boolean click;
 	public static int iteration;
 
-	public void invokebroswer(String url){
-		try {
+	public void invokebroswer() {
+		
 			System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
 			WebDriver driver = new FirefoxDriver();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-			driver.get(url);
-		} catch (Exception e) {
-			e.printStackTrace();
+			register();
+			
 		}
-	}
+	
 
 	public void register() {
 		for (int i = 1; i <= 2; i++) {
@@ -39,9 +38,7 @@ public class SignUp {
 				EmailAddress = "u.com";
 				iteration = 2;
 			}
-			try {
-				invokebroswer("http://iskdemo.com/teamwear/index.php/");
-				//driver.get("http://iskdemo.com/teamwear/index.php/");
+				driver.get("http://iskdemo.com/teamwear/index.php/");
 				driver.findElement(By.xpath("//a[text()='Sign Up'and @class='login']")).click();
 				driver.findElement(By.xpath("//*[@id='firstname']")).sendKeys(FirstName);
 				driver.findElement(By.xpath("//*[@id='lastname']")).sendKeys(LastName);
@@ -60,7 +57,7 @@ public class SignUp {
 				wait1.until(
 						ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'and @title='Register']")));
 				driver.findElement(By.xpath("//button[@type='submit'and @title='Register']")).click();
-				Thread.sleep(5000);
+				
 
 				String title = driver.getTitle();
 
@@ -69,15 +66,13 @@ public class SignUp {
 				} else {
 					System.out.println("iteration " + iteration + " Test cases failed");
 				}
-				driver.close();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			} 
 		}
-	}
+
 
 	public static void main(String[] args) {
 		SignUp obj = new SignUp();
-		obj.register();
+		obj.invokebroswer();
+		
 	}
 }
