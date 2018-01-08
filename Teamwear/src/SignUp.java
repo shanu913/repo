@@ -11,7 +11,6 @@ public class SignUp {
 	public static String FirstName, LastName, EmailAddress, Error_Message;
 	public static Boolean click;
 	public static int iteration;
-<<<<<<< HEAD
 	public static void main(String[] args) throws InterruptedException
 	{
 	System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
@@ -28,8 +27,6 @@ public class SignUp {
 			click = false;
 			EmailAddress="u.com";
 			iteration=2;
-=======
-
 	public void invokebroswer(String url){
 		try {
 			System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
@@ -38,9 +35,7 @@ public class SignUp {
 			//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 			driver.get(url);
 		} catch (Exception e) {
-			e.printStackTrace();
->>>>>>> branch 'master' of https://github.com/shanu913/repo
-		}
+			e.printStackTrace();	}
 	}
 
 	public void register() {
