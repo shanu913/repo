@@ -13,7 +13,7 @@ public class SignUp {
 	public static int iteration;
 
 	public void invokebroswer() {
-		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://iskdemo.com/teamwear/index.php/");
@@ -88,19 +88,15 @@ public class SignUp {
 		} else {
 			System.out.println("Test cases failed");
 		}
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//a[@class='level0' and text()='Products']")).click();
 	}
 	
-	public void navigation() throws InterruptedException
-	{
-		driver.findElement(By.xpath("//a[@class='level0' and text()='Products']")).click();
-		
-	}
 
 	public static void main(String[] args) throws InterruptedException {
 		SignUp obj = new SignUp();
 		obj.register();
 		obj.login();
-		obj.navigation();
 
 	}
 }
