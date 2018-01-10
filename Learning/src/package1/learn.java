@@ -534,6 +534,8 @@ Formating - ctrl+A then Ctrl+shift+f
 		
 	}
 
+By link text ............
+driver.findElement(By.linkText("Products")).click();
 
 
 */
