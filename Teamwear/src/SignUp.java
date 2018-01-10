@@ -2,9 +2,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class SignUp {
 	WebDriver driver;
@@ -13,10 +16,13 @@ public class SignUp {
 	public static int iteration;
 
 	public void invokebroswer() {
-		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 		driver.get("http://iskdemo.com/teamwear/index.php/");
+		
 	}
 
 	public void register() throws InterruptedException {
@@ -88,14 +94,23 @@ public class SignUp {
 		} else {
 			System.out.println("Test cases failed");
 		}
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//a[@class='level0' and text()='Products']")).click();
+		driver.navigate().to("http://iskdemo.com/teamwear/");
+		driver.findElement(By.linkText("Products")).click();
+		driver.findElement(By.xpath("//a[@class='product-image' and @title='navy']")).click();
+		WebElement dd=driver.findElement(By.xpath("//select[@id='select_212']"));
+		Select color=new Select(dd);
+		WebElement selected_value=color.getFirstSelectedOption();
+		System.out.println("selected value is " +selected_value.getText());
+		Thread.sleep(10000);
+		color.selectByValue("Black");
+		WebElement selected_value1=color.getFirstSelectedOption();
+		System.out.println("selected value is " +selected_value1.getText());
 	}
 	
 
 	public static void main(String[] args) throws InterruptedException {
 		SignUp obj = new SignUp();
-		obj.register();
+		//obj.register();
 		obj.login();
 
 	}
