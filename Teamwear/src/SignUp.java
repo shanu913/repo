@@ -16,7 +16,7 @@ public class SignUp {
 	public static int iteration;
 
 	public void invokebroswer() {
-		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
@@ -78,7 +78,7 @@ public class SignUp {
 
 	public void login() throws InterruptedException {
 		invokebroswer();
-		driver.findElement(By.xpath("//a[@class='login' and text()='Login']")).click();
+		/*driver.findElement(By.xpath("//a[@class='login' and text()='Login']")).click();
 		driver.findElement(By.xpath("//input[@id='email']")).clear();
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("aa4@gmail.com");
 		driver.findElement(By.xpath("//input[@id='pass']")).clear();
@@ -93,18 +93,20 @@ public class SignUp {
 			System.out.println("Login sucessfully");
 		} else {
 			System.out.println("Test cases failed");
-		}
-		driver.navigate().to("http://iskdemo.com/teamwear/");
+		}*/
+		//driver.navigate().to("http://iskdemo.com/teamwear/");
 		driver.findElement(By.linkText("Products")).click();
-		driver.findElement(By.xpath("//a[@class='product-image' and @title='navy']")).click();
-		WebElement dd=driver.findElement(By.xpath("//select[@id='select_212']"));
-		Select color=new Select(dd);
-		WebElement selected_value=color.getFirstSelectedOption();
-		System.out.println("selected value is " +selected_value.getText());
 		Thread.sleep(10000);
-		color.selectByValue("Black");
-		WebElement selected_value1=color.getFirstSelectedOption();
-		System.out.println("selected value is " +selected_value1.getText());
+		driver.findElement(By.xpath("//a[@class='product-image' and @title='navy']")).click();
+		Select color=new Select (driver.findElement(By.id("select_212")));
+		color.selectByVisibleText("Black");
+		Select size=new Select (driver.findElement(By.id("select_211")));
+		size.selectByVisibleText("SMALL MENS");
+		driver.findElement(By.xpath("//i[@class='icon-plus']")).click();
+		driver.findElement(By.xpath("//button[@class='button btn-cart' and @title='Add to Cart']")).click();
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//ul[@class='checkout-types top']")).click();
+		
 	}
 	
 
