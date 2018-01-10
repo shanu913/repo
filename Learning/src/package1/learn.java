@@ -12,9 +12,11 @@ package package1;
 
 		import org.openqa.selenium.By;
 		import org.openqa.selenium.WebDriver;
-		import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 		import org.openqa.selenium.support.ui.ExpectedConditions;
-		import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 		//public class code {
 
@@ -537,5 +539,20 @@ Formating - ctrl+A then Ctrl+shift+f
 By link text ............
 driver.findElement(By.linkText("Products")).click();
 
+
+
+Select command .....
+WebElement dd=driver.findElement(By.xpath("//select[@id='select_212']"));
+		Select color=new Select(dd);
+		WebElement selected_value=color.getFirstSelectedOption();
+		System.out.println("selected value is " +selected_value.getText());
+		Thread.sleep(10000);
+		color.selectByValue("Black");
+		WebElement selected_value1=color.getFirstSelectedOption();
+		System.out.println("selected value is " +selected_value1.getText());
+		
+		
+		Ul .......
+		//ul[@class='checkout-types top']
 
 */
