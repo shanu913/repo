@@ -1,11 +1,11 @@
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -16,9 +16,9 @@ public class SignUp {
 	public static int iteration;
 
 	public void invokebroswer() {
-		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://iskdemo.com/teamwear/index.php/");
@@ -90,7 +90,7 @@ public class SignUp {
 		System.out.println(title);
 
 		if (title.equals("My Account")) {
-			System.out.println("Login sucessfully");
+			System.out.println("Login successfully");
 		} else {
 			System.out.println("Test cases failed");
 		}*/
@@ -98,10 +98,20 @@ public class SignUp {
 		driver.findElement(By.linkText("Products")).click();
 		Thread.sleep(10000);
 		driver.findElement(By.xpath("//a[@class='product-image' and @title='navy']")).click();
-		Select color=new Select (driver.findElement(By.id("select_212")));
-		color.selectByVisibleText("Black");
-		Select size=new Select (driver.findElement(By.id("select_211")));
-		size.selectByVisibleText("SMALL MENS");
+		
+		WebElement c = driver.findElement(By.id("select_212"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='2538';",c);
+		
+		WebElement c1 = driver.findElement(By.id("select_211"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='2534';",c1);
+		
+		
+		//Select color=new Select (driver.findElement(By.id("select_212")));
+		//color.selectByVisibleText("Black");
+		//Select size=new Select (driver.findElement(By.id("select_211")));	
+		//size.selectByVisibleText("SMALL MENS");
+		
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@class='icon-plus']")).click();
 		driver.findElement(By.xpath("//button[@class='button btn-cart' and @title='Add to Cart']")).click();
 		Thread.sleep(10000);
