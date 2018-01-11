@@ -11,7 +11,8 @@ package package1;
 		import java.util.concurrent.TimeUnit;
 
 		import org.openqa.selenium.By;
-		import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 		import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -554,5 +555,28 @@ WebElement dd=driver.findElement(By.xpath("//select[@id='select_212']"));
 		
 		Ul .......
 		//ul[@class='checkout-types top']
+		 
+		 
+		 Javascript for drop down .................
+		 
+		 WebElement select = driver.findElement(By.id("select_212"));
+
+		((JavascriptExecutor)driver).executeScript("var select = arguments[0]; for(var i = 0; i < select.options.length; i++){ if(select.options[i].text == arguments[1]){ select.options[i].selected = true; } }", select, "Navy")
+		Source: https://stackoverflow.com/questions/38239278/how-to-select-a-value-from-drop-down-using-selenium
+		
+		or
+		
+		WebElement c = driver.findElement(By.id("select_212"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='2538';",c);
+		Source: http://selenium-interview-questions.blogspot.in/2014/11/unable-to-select-value-from-drop-down.html
+		
+		Javascript to click an element ...
+		WebElement element = driver.findElement(By.id("gbqfd"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+		
+		
+		
+		 */
 
 */
