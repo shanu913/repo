@@ -575,7 +575,37 @@ WebElement dd=driver.findElement(By.xpath("//select[@id='select_212']"));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", element);
 		
+		Clicking a web element .........................................
 		
+		// Locating the web element using id
+WebElement element = driver.findElement(By.id("id of the webelement"));
+
+// Instantiating JavascriptExecutor
+JavascriptExecutor js = (JavascriptExecutor)driver;
+
+// Clicking the web element
+js.executeScript("arguments[0].click();", element);
+
+
+Typing in a Text Box ......................................................
+
+// Instantiating JavascriptExecutor
+JavascriptExecutor js = (JavascriptExecutor)driver;
+
+// Typing the test data into Textbox
+js.executeScript("document.getElementById(‘id of the element’).value=’test data’;”);
+
+
+Scrolling down until the web element is in the view .......................................
+
+WebElement element=driver.findElement(By.xpath("//input[contains(@value,'Save')]"));
+
+// Instantiating the javascriptExecutor and scrolling into the view in the single test step
+((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",element);
+
+Source: http://www.softwaretestinghelp.com/efficient-selenium-scripting-selenium-tutorial-27/
+
+
 		
 		
 		 */
