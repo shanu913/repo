@@ -16,7 +16,7 @@ public class SignUp {
 	public static int iteration;
 
 	public void invokebroswer() {
-		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
@@ -78,7 +78,7 @@ public class SignUp {
 
 	public void login() throws InterruptedException {
 		invokebroswer();
-		/*driver.findElement(By.xpath("//a[@class='login' and text()='Login']")).click();
+		driver.findElement(By.xpath("//a[@class='login' and text()='Login']")).click();
 		driver.findElement(By.xpath("//input[@id='email']")).clear();
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("aa4@gmail.com");
 		driver.findElement(By.xpath("//input[@id='pass']")).clear();
@@ -93,7 +93,7 @@ public class SignUp {
 			System.out.println("Login successfully");
 		} else {
 			System.out.println("Test cases failed");
-		}*/
+		}
 		//driver.navigate().to("http://iskdemo.com/teamwear/");
 		driver.findElement(By.linkText("Products")).click();
 		Thread.sleep(10000);
