@@ -133,6 +133,7 @@ public class SignUp {
 		Thread.sleep(2000);
 		WebElement d = driver.findElement(By.id("billing:region_id"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].value='43';",d);
+		driver.findElement(By.xpath("//input[@id='billing:postcode']")).clear();
 		driver.findElement(By.xpath("//input[@id='billing:postcode']")).sendKeys("98661 ");
 		WebElement d1 = driver.findElement(By.id("billing:country_id"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].value='US';",d1);
@@ -146,6 +147,18 @@ public class SignUp {
 		driver.findElement(By.xpath("//div[@id='shipping-method-buttons-container']/button")).click();
 		driver.findElement(By.xpath("//input[@id='p_method_ccsave']")).click();
 		driver.findElement(By.xpath("//div[@id='payment-buttons-container']/button")).click();
+		driver.findElement(By.xpath("//input[@id='ccsave_cc_owner']")).sendKeys("Test User");
+		WebElement e = driver.findElement(By.id("ccsave_cc_type"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='VI';",e);
+		driver.findElement(By.xpath("//input[@id='ccsave_cc_number']")).sendKeys("4111111111111111");
+		WebElement e1 = driver.findElement(By.id("ccsave_expiration"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='7';",e1);
+		WebElement e2 = driver.findElement(By.id("ccsave_expiration_yr"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='2024';",e2);
+		driver.findElement(By.xpath("//input[@id='ccsave_cc_cid']")).sendKeys("123");
+		driver.findElement(By.xpath("//div[@id='payment-buttons-container']/button")).click();
+		
+		
 		
 		
 		
