@@ -84,7 +84,7 @@ public class SignUp {
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("aa4@gmail.com");
 		driver.findElement(By.xpath("//input[@id='pass']")).clear();
 		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("123456");
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@id='send2']")).click();
 		Thread.sleep(10000);
 		String title = driver.getTitle();
@@ -97,7 +97,7 @@ public class SignUp {
 		}
 		//driver.navigate().to("http://iskdemo.com/teamwear/");
 		driver.findElement(By.linkText("Products")).click();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//a[@class='product-image' and @title='navy']")).click();
 		
 		WebElement c = driver.findElement(By.id("select_212"));
@@ -115,7 +115,7 @@ public class SignUp {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@class='icon-plus']")).click();
 		driver.findElement(By.xpath("//button[@class='button btn-cart' and @title='Add to Cart']")).click();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//ul[@class='checkout-types top']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='billing:firstname']")).clear();
