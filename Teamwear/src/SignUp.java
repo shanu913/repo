@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -16,7 +17,7 @@ public class SignUp {
 	public static int iteration;
 
 	public void invokebroswer() {
-		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
@@ -116,6 +117,38 @@ public class SignUp {
 		driver.findElement(By.xpath("//button[@class='button btn-cart' and @title='Add to Cart']")).click();
 		Thread.sleep(10000);
 		driver.findElement(By.xpath("//ul[@class='checkout-types top']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='billing:firstname']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:firstname']")).sendKeys("Test");
+		driver.findElement(By.xpath("//input[@id='billing:lastname']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:lastname']")).sendKeys("User");
+		driver.findElement(By.xpath("//input[@id='billing:company']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:company']")).sendKeys("Apple");
+		driver.findElement(By.xpath("//input[@id='billing:street1']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:street1']")).sendKeys("NE St Johns Rd");
+		driver.findElement(By.xpath("//input[@id='billing:street2']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:street2']")).sendKeys("Vancouver");
+		driver.findElement(By.xpath("//input[@id='billing:city']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:city']")).sendKeys("SEATTLE WA");
+		Thread.sleep(2000);
+		WebElement d = driver.findElement(By.id("billing:region_id"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='43';",d);
+		driver.findElement(By.xpath("//input[@id='billing:postcode']")).sendKeys("98661 ");
+		WebElement d1 = driver.findElement(By.id("billing:country_id"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='US';",d1);
+		driver.findElement(By.xpath("//input[@id='billing:telephone']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:telephone']")).sendKeys("123456");
+		driver.findElement(By.xpath("//input[@id='billing:fax']")).clear();
+		driver.findElement(By.xpath("//input[@id='billing:fax']")).sendKeys("111111	");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@id='billing-buttons-container']/button")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[@id='shipping-method-buttons-container']/button")).click();
+		driver.findElement(By.xpath("//input[@id='p_method_ccsave']")).click();
+		driver.findElement(By.xpath("//div[@id='payment-buttons-container']/button")).click();
+		
+		
+		
 		
 	}
 	
