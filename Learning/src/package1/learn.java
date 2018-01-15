@@ -606,6 +606,9 @@ WebElement element=driver.findElement(By.xpath("//input[contains(@value,'Save')]
 Source: http://www.softwaretestinghelp.com/efficient-selenium-scripting-selenium-tutorial-27/
 
 
+Div + Button to click ...............
+//div[@id='billing-buttons-container']/button
+
 		
 		
 		 */
