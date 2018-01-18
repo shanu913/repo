@@ -115,6 +115,7 @@ public class SignUp {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@class='icon-plus']")).click();
 		driver.findElement(By.xpath("//button[@class='button btn-cart' and @title='Add to Cart']")).click();
+		System.out.println("Product selected and added to cart");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//ul[@class='checkout-types top']")).click();
 		Thread.sleep(3000);
@@ -145,6 +146,7 @@ public class SignUp {
 		driver.findElement(By.xpath("//div[@id='billing-buttons-container']/button")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@id='shipping-method-buttons-container']/button")).click();
+		System.out.println("Billing information filled");
 		driver.findElement(By.xpath("//input[@id='p_method_ccsave']")).click();
 		driver.findElement(By.xpath("//div[@id='payment-buttons-container']/button")).click();
 		driver.findElement(By.xpath("//input[@id='ccsave_cc_owner']")).sendKeys("Test User");
@@ -170,6 +172,8 @@ public class SignUp {
 		SignUp obj = new SignUp();
 		//obj.register();
 		obj.login();
+		Account obj1 = new Account();
+		obj1.AC();
 
 	}
 }
