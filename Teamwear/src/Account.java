@@ -23,5 +23,7 @@ public class Account extends SignUp {
 
 			System.out.println("Test case failed");
 		}
-	}
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[@href='http://iskdemo.com/teamwear/index.php/customer/account/edit/' and text()='Edit']")).click();
+}
 }
