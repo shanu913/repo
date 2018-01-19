@@ -171,7 +171,7 @@ public class SignUp {
 	public static void main(String[] args) throws InterruptedException {
 		SignUp obj = new SignUp();
 		//obj.register();
-		obj.login();
+		//obj.login();
 		Account obj1 = new Account();
 		obj1.AC();
 
