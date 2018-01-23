@@ -608,6 +608,14 @@ Source: http://www.softwaretestinghelp.com/efficient-selenium-scripting-selenium
 
 Div + Button to click ...............
 //div[@id='billing-buttons-container']/button
+ * 
+ * <div class="Caption">
+  Model saved
+</div>
+Write this -
+
+//div[contains(@class, 'Caption') and text()='Model saved']
+ */
 
 		
 		
