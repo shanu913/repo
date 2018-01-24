@@ -1,4 +1,6 @@
-package package1;
+/*
+ package package1;
+ 
 
 //public class learn {
 
@@ -90,11 +92,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 			
 			if(driver.findElement(By.xpath(noRecordId)).isDisplayed() )                                                                                                         
 			{         
-			  /**Do this*/     
+			  
 			}    
 			else    
 			{     
-			  /**Do this*/    
+			   
 			}
 			
 			
@@ -605,7 +607,7 @@ WebElement element=driver.findElement(By.xpath("//input[contains(@value,'Save')]
 
 Source: http://www.softwaretestinghelp.com/efficient-selenium-scripting-selenium-tutorial-27/
 
-
+//xpath element ...................
 Div + Button to click ...............
 //div[@id='billing-buttons-container']/button
  * 
@@ -615,10 +617,49 @@ Div + Button to click ...............
 Write this -
 
 //div[contains(@class, 'Caption') and text()='Model saved']
- */
-
+ * 
+ li element + anchor tag element
+   //li[contains(@id,'menu-item-17')]/following::a[@href="http://gorillaclients.com/james-stone/contact-us/"]
+    or
+   //li[contains(@id,'menu-item-17')]/descendant::a[@href="http://gorillaclients.com/james-stone/contact-us/"]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    */
+    *//
+ 
 		
 		
-		 */
-
-*/
+	
