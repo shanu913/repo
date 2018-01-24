@@ -8,11 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 //Creating class
 public class Contact {
-	
+
 	// Crating main method
 	public static void main(String args[]) {
-		
-		// Gecko Driver is the link between your tests in Selenium and the Firefox browser.
+
+		// Gecko Driver is the link between your tests in Selenium and the Firefox
+		// browser.
 		System.setProperty("webdriver.gecko.driver", "E:\\Study\\Selenium\\New folder\\geckodriver.exe");
 
 		// Instantiating objects and variables
