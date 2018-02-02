@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 
 public class SignUp {
@@ -16,6 +17,7 @@ public class SignUp {
 	public static Boolean click;
 	public static int iteration;
 
+	@Test
 	public void invokebroswer() {
 		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 		driver = new FirefoxDriver();
@@ -168,12 +170,11 @@ public class SignUp {
 	}
 	
 
-	public static void main(String[] args) throws InterruptedException {
-		SignUp obj = new SignUp();
+	//public static void main(String[] args) throws InterruptedException {
+		//SignUp obj = new SignUp();
 		//obj.register();
 		//obj.login();
-		Account obj1 = new Account();
-		obj1.AC();
+		//Account obj1 = new Account();
+		//obj1.AC();
 
 	}
-}

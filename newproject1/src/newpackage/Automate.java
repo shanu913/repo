@@ -1,18 +1,32 @@
 package newpackage;
 
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Automate {
+	WebDriver driver;
 	
-	@Test
-	public void main()
+	@BeforeTest
+	public void start()
 	{
-		System.setProperty("webdriver.gecko.driver","E:\\Gecko\\geckodriver.exe");
-		WebDriver driver=new FirefoxDriver();
-		driver.get("https://www.google.co.in");
-		driver.findElement(By.xpath("//input[@id='gs_htif0']")).sendKeys("2+2");
-		driver.findElement(By.name("btnK")).click();
+		System.setProperty("webdriver.gecko.driver","D:\\gecko\\geckodriver.exe");
 	
+		driver=new FirefoxDriver();
+	}
+		
+		
+		@Test(enabled = false)
+		public void addLocationTestCase() {
+			driver.get("https://www.facebook.com/");
+		}
+		
+		
+		@Test
+		public void add() {
+			driver.get("https://www.google.co.in");
+		}
 		
 	}
-}
