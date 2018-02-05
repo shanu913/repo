@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11145" started-at="2018-02-02T06:52:06Z" finished-at="2018-02-02T06:52:17Z">
+  <suite name="Default suite" duration-ms="34727" started-at="2018-02-05T13:08:45Z" finished-at="2018-02-05T13:09:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11145" started-at="2018-02-02T06:52:06Z" finished-at="2018-02-02T06:52:17Z">
+    <test name="Default test" duration-ms="34727" started-at="2018-02-05T13:08:45Z" finished-at="2018-02-05T13:09:19Z">
       <class name="SignUp">
-        <test-method status="PASS" signature="invokebroswer()[pri:0, instance:SignUp@3d921e20]" name="invokebroswer" duration-ms="11113" started-at="2018-02-02T12:22:06Z" finished-at="2018-02-02T12:22:17Z">
+        <test-method status="PASS" signature="invokebroswer()[pri:0, instance:SignUp@58c1670b]" name="invokebroswer" is-config="true" duration-ms="14391" started-at="2018-02-05T18:38:45Z" finished-at="2018-02-05T18:38:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokebroswer -->
+        <test-method status="PASS" signature="main()[pri:0, instance:SignUp@58c1670b]" name="main" duration-ms="20318" started-at="2018-02-05T18:38:59Z" finished-at="2018-02-05T18:39:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
       </class> <!-- SignUp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
