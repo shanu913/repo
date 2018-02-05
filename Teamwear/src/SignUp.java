@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
@@ -17,7 +18,7 @@ public class SignUp {
 	public static Boolean click;
 	public static int iteration;
 
-	@Test
+	@BeforeTest
 	public void invokebroswer() {
 		System.setProperty("webdriver.gecko.driver", "D:\\gecko\\geckodriver.exe");
 		driver = new FirefoxDriver();
@@ -27,10 +28,11 @@ public class SignUp {
 		driver.get("http://iskdemo.com/teamwear/index.php/");
 		
 	}
-
+	
+	@Test(enabled = false)
 	public void register() throws InterruptedException {
 		for (int i = 1; i <= 2; i++) {
-			invokebroswer();
+			//invokebroswer();
 			if (i == 1) {
 				FirstName = "use";
 				LastName = "us";
@@ -78,7 +80,8 @@ public class SignUp {
 
 		}
 	}
-
+	
+	@Test(enabled = false)
 	public void login() throws InterruptedException {
 		invokebroswer();
 		driver.findElement(By.xpath("//a[@class='login' and text()='Login']")).click();
@@ -161,12 +164,16 @@ public class SignUp {
 		((JavascriptExecutor) driver).executeScript("arguments[0].value='2024';",e2);
 		driver.findElement(By.xpath("//input[@id='ccsave_cc_cid']")).sendKeys("123");
 		driver.findElement(By.xpath("//div[@id='payment-buttons-container']/button")).click();
+			
 		
-		
-		
-		
-		
-		
+	}
+	
+	
+	@Test
+	public void main() throws InterruptedException
+	{
+		Account obj1 = new Account();
+		obj1.AC();
 	}
 	
 
