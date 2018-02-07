@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34727" started-at="2018-02-05T13:08:45Z" finished-at="2018-02-05T13:09:19Z">
+  <suite name="Default suite" duration-ms="24219" started-at="2018-02-07T14:00:52Z" finished-at="2018-02-07T14:01:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34727" started-at="2018-02-05T13:08:45Z" finished-at="2018-02-05T13:09:19Z">
+    <test name="Default test" duration-ms="24219" started-at="2018-02-07T14:00:52Z" finished-at="2018-02-07T14:01:17Z">
       <class name="SignUp">
-        <test-method status="PASS" signature="invokebroswer()[pri:0, instance:SignUp@58c1670b]" name="invokebroswer" is-config="true" duration-ms="14391" started-at="2018-02-05T18:38:45Z" finished-at="2018-02-05T18:38:59Z">
+        <test-method status="PASS" signature="invokebroswer()[pri:0, instance:SignUp@58c1670b]" name="invokebroswer" is-config="true" duration-ms="4374" started-at="2018-02-07T19:30:52Z" finished-at="2018-02-07T19:30:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokebroswer -->
-        <test-method status="PASS" signature="main()[pri:0, instance:SignUp@58c1670b]" name="main" duration-ms="20318" started-at="2018-02-05T18:38:59Z" finished-at="2018-02-05T18:39:19Z">
+        <test-method status="PASS" signature="main()[pri:0, instance:SignUp@58c1670b]" name="main" duration-ms="19826" started-at="2018-02-07T19:30:57Z" finished-at="2018-02-07T19:31:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->

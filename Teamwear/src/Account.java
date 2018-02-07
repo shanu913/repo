@@ -4,6 +4,7 @@ public class Account extends SignUp {
 
 	public void AC() throws InterruptedException {
 		invokebroswer();
+		driver.get("http://iskdemo.com/teamwear/index.php/");
 		driver.findElement(By.xpath(
 				"//img[@src='http://iskdemo.com/teamwear/skin/frontend/teamwear/default/images/my-account.png']"))
 				.click();

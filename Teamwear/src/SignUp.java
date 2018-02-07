@@ -25,7 +25,7 @@ public class SignUp {
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://iskdemo.com/teamwear/index.php/");
+		//driver.get("http://iskdemo.com/teamwear/index.php/");
 		
 	}
 	
@@ -172,6 +172,7 @@ public class SignUp {
 	@Test
 	public void main() throws InterruptedException
 	{
+		
 		Account obj1 = new Account();
 		obj1.AC();
 	}
