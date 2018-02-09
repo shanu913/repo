@@ -13,7 +13,8 @@ import org.testng.annotations.Test;
 
 
 public class SignUp {
-	WebDriver driver;
+	public static WebDriver driver;
+	String URL = "http://iskdemo.com/teamwear/index.php/";
 	public static String FirstName, LastName, EmailAddress;
 	public static Boolean click;
 	public static int iteration;
@@ -172,7 +173,6 @@ public class SignUp {
 	@Test
 	public void main() throws InterruptedException
 	{
-		
 		Account obj1 = new Account();
 		obj1.AC();
 	}

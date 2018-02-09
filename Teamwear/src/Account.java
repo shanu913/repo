@@ -1,13 +1,14 @@
 import org.openqa.selenium.By;
+import org.testng.annotations.Test;
 
 public class Account extends SignUp {
-
+	
+	
+@Test
 	public void AC() throws InterruptedException {
 		invokebroswer();
-		driver.get("http://iskdemo.com/teamwear/index.php/");
-		driver.findElement(By.xpath(
-				"//img[@src='http://iskdemo.com/teamwear/skin/frontend/teamwear/default/images/my-account.png']"))
-				.click();
+		//driver.get(URL);
+		driver.findElement(By.xpath("//img[@src='http://iskdemo.com/teamwear/skin/frontend/teamwear/default/images/my-account.png']")).click();
 		driver.findElement(By.xpath("//a[@title='My Account']")).click();
 		driver.findElement(By.xpath("//input[@id='email']")).clear();
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("aa4@gmail.com");
